@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #OWN GEMS
 gem 'dotenv-rails', :groups => [:development, :test]
+gem 'devise', '~> 4.2'
 gem "slim-rails"
 
 group :development, :test do
