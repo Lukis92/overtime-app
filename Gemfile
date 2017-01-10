@@ -12,12 +12,14 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 #OWN GEMS
-gem 'dotenv-rails', :groups => [:development, :test]
+gem 'annotate', '~> 2.7', '>= 2.7.1'
 gem 'devise', '~> 4.2'
+gem 'simple_form', '~> 3.4'
 gem "slim-rails"
 
 group :development, :test do
   gem 'byebug'
+  gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'database_cleaner'
