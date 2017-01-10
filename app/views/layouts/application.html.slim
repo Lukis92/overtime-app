@@ -7,4 +7,7 @@ html
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body.container
-    = yield
+    .row
+      .col-md-12
+        = render 'shared/nav'
+        = yield
