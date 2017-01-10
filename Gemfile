@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rake', '~> 11.3.0'
 #OWN GEMS
 gem 'annotate', '~> 2.7', '>= 2.7.1'
+gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise', '~> 4.2'
 gem 'simple_form', '~> 3.4'
 gem "slim-rails"
