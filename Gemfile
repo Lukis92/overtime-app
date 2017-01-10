@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem 'rake', '~> 11.3.0'
 #OWN GEMS
 gem 'annotate', '~> 2.7', '>= 2.7.1'
 gem 'devise', '~> 4.2'

@@ -1,4 +1,4 @@
-= simple_form_for @post do |f|
-  = f.input :date, as: :date
-  = f.input :rationale
-  = f.button :submit
+= form_for @post do |f|
+  = f.date_field :date
+  = f.text_area :rationale
+  = f.submit 'Save'
