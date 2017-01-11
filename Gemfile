@@ -11,14 +11,16 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'rake', '~> 11.3.0'
-#OWN GEMS
+# OWN GEMS
 gem 'annotate', '~> 2.7', '>= 2.7.1'
+gem 'administrate', '~> 0.3.0'
 gem 'better_errors', '~> 2.1', '>= 2.1.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+gem 'bourbon'
 gem 'devise', '~> 4.2'
 gem 'factory_girl_rails', '~> 4.8'
 gem 'simple_form', '~> 3.4'
-gem "slim-rails"
+gem 'slim-rails'
 
 group :development, :test do
   gem 'byebug'
