@@ -4,7 +4,7 @@ tr
   td
     = post.date
   td
-    = post.user.full_name
+    = post.user.full_name unless post.user.nil?
   td
     = truncate(post.rationale)
   td
