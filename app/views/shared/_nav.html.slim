@@ -1,21 +1,22 @@
 .logo
   h1 Time Tracker
-  
-.custom-nav.nav.nav-tabs
-  li class=(active?(root_path))
-    = link_to "Home", root_path
-  li class=(active?(posts_path))
-    = link_to "Time Entries", posts_path
-  li class=(active?(new_post_path))
-    = link_to "Add New Entry", new_post_path, id: 'new_post_from_nav'
-  li.dropdown.pull-right
-    a.dropdown-toggle data-toggle="dropdown" href="#" 
-      | Account
-      strong.caret
-    ul.dropdown-menu
-      - if current_user.type == 'AdminUser'
+
+- if current_user  
+  .custom-nav.nav.nav-tabs
+    li class=(active?(root_path))
+      = link_to "Home", root_path
+    li class=(active?(posts_path))
+      = link_to "Time Entries", posts_path
+    li class=(active?(new_post_path))
+      = link_to "Add New Entry", new_post_path, id: 'new_post_from_nav'
+    li.dropdown.pull-right
+      a.dropdown-toggle data-toggle="dropdown" href="#" 
+        | Account
+        strong.caret
+      ul.dropdown-menu
+        - if current_user.type == 'AdminUser'
+          li
+            = link_to "TODO: Admin Dashboard", admin_root_path
+          li.divider
         li
-          = link_to "TODO: Admin Dashboard", admin_root_path
-        li.divider
-      li
-        = link_to "Logout", destroy_user_session_path, method: :delete
+          = link_to "Logout", destroy_user_session_path, method: :delete
