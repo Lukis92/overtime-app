@@ -19,6 +19,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'bourbon'
 gem 'devise', '~> 4.2'
 gem 'factory_girl_rails', '~> 4.8'
+gem 'pundit', '~> 1.1' # Object oriented authorization
 gem 'simple_form', '~> 3.4'
 gem 'slim-rails'
 
