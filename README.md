@@ -26,3 +26,4 @@
 - Refactor posts/form for admin user with status
 - Fix post_spec.rb:82 to use factories
 - Fix post_spec.rb:52 to gave correct user reference and not require update
+- Refactor posts/form for admin user with status
