@@ -1,0 +1,2 @@
+class AuditLogController < ApplicationController
+end
