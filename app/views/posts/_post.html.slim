@@ -8,7 +8,7 @@ tr
   td
     = post.user.full_name unless post.user.nil?
   td
-    = truncate(post.rationale)
+    = link_to truncate(post.rationale), post
   td
     = status_label post.status
   td
