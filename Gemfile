@@ -23,6 +23,7 @@ gem 'faker', '~> 1.7', '>= 1.7.2' # fake data generator
 gem 'kaminari', '~> 0.17' # customizable paginator
 gem 'puma', '~> 3.6', '>= 3.6.2' # Ruby Web Server
 gem 'pundit', '~> 1.1' # Object oriented authorization
+gem 'rails_12factor', '~> 0.0.3' # enables serving assets in production
 gem 'simple_form', '~> 3.4'
 gem 'slim-rails'
 gem 'twilio-ruby', '~> 4.11', '>= 4.11.1' # Twilio REST API
