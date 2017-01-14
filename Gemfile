@@ -19,6 +19,7 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'bourbon'
 gem 'devise', '~> 4.2'
 gem 'factory_girl_rails', '~> 4.8'
+gem 'faker', '~> 1.7', '>= 1.7.2' # fake data generator
 gem 'kaminari', '~> 0.17' # customizable paginator
 gem 'puma', '~> 3.6', '>= 3.6.2' # Ruby Web Server
 gem 'pundit', '~> 1.1' # Object oriented authorization

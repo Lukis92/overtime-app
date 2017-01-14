@@ -1,15 +1,8 @@
 .container-fluid
   .pending-homepage.row
-    .homepage-block.col-md-3
-      p asdf
-    .homepage-block.col-md-3
-      p asdf
-    .homepage-block.col-md-3
-      p asdf
-    .homepage-block.col-md-3
-      p asdf
-    .homepage-block.col-md-3
-      p asdf
+    h2 Items Pending Your Approval
+    hr
+    = render partial: 'pending_approval', locals: { pending_approval: @pending_approval }
   .pending-homepage
     div
       p asdf

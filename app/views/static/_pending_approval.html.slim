@@ -1,0 +1,18 @@
+- @pending_approvals.each do |pa|
+  .homepage-block.col-md-3
+    h4
+      = pa.user.full_name
+    p
+      .pending-details 
+        | Date Submitted:
+      = pa.date
+    p
+      .pending-details 
+        | Rationale:
+      = truncate pa.rationale, length: 42
+    
+    .row
+      .col-md-6.column
+        = link_to 'Approve', root_path, class: 'btn btn-success btn-block'
+      .col-md-6.column
+        = link_to 'Review', root_path, class: 'btn btn-warning btn-block'
