@@ -1,0 +1,15 @@
+- recent_audit_items.each do |rai|
+  .homepage-block.col-md-3
+    h4 = rai.user.full_name
+    p 
+      .pending-details
+        | Week starting:
+      = rai.start_date
+    p
+      .pending-details
+        | Confirmed at:
+      = rai.end_date || status_label('pending')
+    p
+      .pending-details
+        | Status:
+      = status_label rai.status
