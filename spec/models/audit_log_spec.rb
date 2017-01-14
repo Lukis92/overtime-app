@@ -12,12 +12,18 @@
 #
 
 require 'rails_helper'
+require 'pry'
 
 RSpec.describe AuditLog, type: :model do
   before do
     @audit_log = FactoryGirl.create(:audit_log)
   end
 
+  describe 'creation' do
+    it 'can be properly created' do
+      expect(@audit_log).to be_valid
+    end
+  end
   describe 'validations' do
     it 'it should be required to have a user association' do
       @audit_log.user_id = nil
