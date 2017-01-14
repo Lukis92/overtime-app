@@ -19,7 +19,7 @@ describe 'AuditLog Feature' do
     end
 
     it 'cannot be accessed by a non admin users' do
-      logout(:admin_user)
+      logout(:user)
       another_user = FactoryGirl.create(:user)
       login_as(another_user, scope: :user)
       visit audit_logs_path
