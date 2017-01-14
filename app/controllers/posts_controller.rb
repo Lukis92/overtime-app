@@ -10,13 +10,14 @@ class PostsController < ApplicationController
     @post.approved!
     redirect_to root_path, notice: "The post has been approved"
   end
+
   def new
     @post = Post.new
   end
 
   def create
     @post = Post.new(post_params)
-    # @post.user_id = current_user.id
+    @post.user_id = current_user.id
 
     if @post.save
       redirect_to @post, notice: 'Your post was created successfully'
