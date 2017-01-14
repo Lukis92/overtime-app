@@ -10,7 +10,8 @@ table.table.table-striped.table-hover
       th Status
       th
       th
-  tbody
+  tbody#audit_logs
     = render @audit_logs
     
-= paginate @audit_logs
+#paginator
+  = paginate @audit_logs, remote: true
