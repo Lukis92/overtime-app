@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       get :confirm
     end
   end
-  
+
   namespace :admin do
     resources :users
       resources :posts

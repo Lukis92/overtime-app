@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.6'
 
 gem 'rails', '4.2.7.1'
 gem 'pg', '~> 0.15'
@@ -18,8 +19,10 @@ gem 'better_errors', '~> 2.1', '>= 2.1.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'bourbon'
 gem 'devise', '~> 4.2'
+gem 'dotenv-rails'
 gem 'factory_girl_rails', '~> 4.8'
 gem 'faker', '~> 1.7', '>= 1.7.2' # fake data generator
+gem 'heroku', '~> 3.43', '>= 3.43.16' # tool to manager app on Heroku
 gem 'kaminari', '~> 0.17' # customizable paginator
 gem 'puma', '~> 3.6', '>= 3.6.2' # Ruby Web Server
 gem 'pundit', '~> 1.1' # Object oriented authorization
@@ -30,7 +33,6 @@ gem 'twilio-ruby', '~> 4.11', '>= 4.11.1' # Twilio REST API
 
 group :development, :test do
   gem 'byebug'
-  gem 'dotenv-rails'
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'database_cleaner'
