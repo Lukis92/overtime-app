@@ -14,7 +14,7 @@ describe 'navigate' do
 
     it 'has a status that can be edited on the form' do
       choose('post_status_approved')
-      click_on 'Save'
+      click_on 'Update Post'
 
       expect(@post.reload.status).to eq('approved')
     end

@@ -85,18 +85,18 @@ describe 'navigate' do
     end
 
     it 'can be created from new form page' do
-      fill_in 'post[date]', with: Date.today
+      select_date(Date.today, from:"post_date")
       fill_in 'post[work_performed]', with: 'Some work_performed'
       fill_in 'post[daily_hours]', with: 4.5
 
-      expect { click_on 'Save' }.to change(Post, :count).by(1)
+      expect { click_on 'Create Post' }.to change(Post, :count).by(1)
     end
 
     it 'will have a user associated it' do
-      fill_in 'post[date]', with: Date.today
+      select_date(Date.today, from:"post_date")
       fill_in 'post[work_performed]', with: 'User Association'
       fill_in 'post[daily_hours]', with: 4.5
-      click_on 'Save'
+      click_on 'Create Post'
 
       expect(User.last.posts.last.work_performed).to eq('User Association')
     end
@@ -114,9 +114,9 @@ describe 'navigate' do
     it 'can be edited' do
       visit edit_post_path(post)
 
-      fill_in 'post[date]', with: Date.today
+      select_date(Date.today, from:"post_date")
       fill_in 'post[work_performed]', with: 'Edited content'
-      click_on 'Save'
+      click_on 'Update Post'
 
       expect(page).to have_content('Edited content')
     end
