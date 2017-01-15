@@ -12,7 +12,6 @@
 #
 
 require 'rails_helper'
-require 'pry'
 
 RSpec.describe AuditLog, type: :model do
   before do
@@ -37,7 +36,7 @@ RSpec.describe AuditLog, type: :model do
 
     it 'it should be required to have a start date' do
       @audit_log.start_date = nil
-      expect(@audit_log).to_not be valid
+      expect(@audit_log).to_not be_valid
     end
 
     it 'it should have a start date equal to 6 days prior' do

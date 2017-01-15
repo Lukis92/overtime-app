@@ -28,7 +28,7 @@ describe 'navigate' do
       post
       second_post = FactoryGirl.create(:second_post)
       second_post.update!(user_id: user.id
-      )
+                         )
       visit posts_path
       expect(page).to have_text(post.work_performed)
       expect(page).to have_text(second_post.work_performed)
@@ -38,7 +38,7 @@ describe 'navigate' do
   it 'has a scope so that only post creators can see their posts' do
     other_user = User.create(first_name: 'Non', last_name: 'Authorized',
                              email: 'nonauth@example.com', password: 'asdfasdf',
-                             password_confirmation: 'asdfasdf', phone: "5555555555")
+                             password_confirmation: 'asdfasdf', phone: '5555555555')
     post_from_other_user = Post.create(date: Date.today,
                                        work_performed: "This post shouldn't be seen",
                                        user_id: other_user.id, daily_hours: 3.5)
@@ -50,8 +50,8 @@ describe 'navigate' do
   describe 'new' do
     it 'has a link from the homepage' do
       employee = Employee.create(first_name: 'Employee', last_name: 'Authorized',
-                                 email: "employee@example.com", password: "asdfasdf",
-                                 password_confirmation: "asdfasdf", phone: "555555555")
+                                 email: 'employee@example.com', password: 'asdfasdf',
+                                 password_confirmation: 'asdfasdf', phone: '555555555')
       login_as(employee, scope: :user)
       visit root_path
       click_link('new_post_from_nav')
@@ -89,7 +89,7 @@ describe 'navigate' do
       fill_in 'post[work_performed]', with: 'Some work_performed'
       fill_in 'post[daily_hours]', with: 4.5
 
-      expect { click_on "Save" }.to change(Post, :count).by(1)
+      expect { click_on 'Save' }.to change(Post, :count).by(1)
     end
 
     it 'will have a user associated it' do
@@ -104,8 +104,10 @@ describe 'navigate' do
 
   describe 'edit' do
     it 'can be reached by clicking edit on index page' do
+      post_to_edit = Post.create(date: Date.today, work_performed: 'asdf',
+                                 user_id: user.id, daily_hours: 3.5)
       visit posts_path
-      click_link("edit_#{post.id}")
+      click_link("edit_#{post_to_edit.id}")
       expect(page.status_code).to eq(200)
     end
 

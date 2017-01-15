@@ -8,10 +8,10 @@ tr
   td
     = status_label post.status
   td
-    = link_to '', edit_post_path(post), class: 'glyphicon glyphicon-pencil index-icons',
-                                        id: "edit_#{post.id}" if policy(post).update?
+    = link_to '', edit_post_path(post), id: "edit_#{post.id}",
+                                        class: 'glyphicon glyphicon-pencil index-icons'  
   td
-    = link_to '', post_path(post), method: :delete, 
-                                   id: "delete_post_#{post.id}_from_index", 
+    = link_to '', post_path(post), method: :delete,
+                                   id: "delete_post_#{post.id}_from_index", \
                                    class: 'glyphicon glyphicon-trash index-icons',
                                    data: {confirm: 'Are you sure?'}
