@@ -7,6 +7,14 @@ module ApplicationHelper
     'active' if current_page?(path)
   end
 
+  def employee?
+    current_user.type == 'Employee'
+  end
+
+  def admin?
+    admin_types.include?(current_user.type)
+  end
+  
   def errors_for(object)
     render 'shared/errors', object: object if object.errors.any?
   end

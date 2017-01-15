@@ -5,19 +5,14 @@
   .custom-nav.nav.nav-tabs
     li class=(active?(root_path))
       = link_to "", root_path, class: 'glyphicon glyphicon-home'
-    li class=(active?(posts_path))
-      = link_to "Entries", posts_path
-    = render 'shared/audit_log_tab' if policy(AuditLog).index?
-    li class=(active?(new_post_path))
-      = link_to "Request Overtime", new_post_path, id: 'new_post_from_nav'
+    = render 'shared/employee_nav_items' if employee?
+    = render 'shared/audit_log_tab' if admin?
+    
     li.dropdown.pull-right
       a.dropdown-toggle data-toggle="dropdown" href="#" 
         | Account
         strong.caret
       ul.dropdown-menu
-        - if current_user.type == 'AdminUser'
-          li
-            = link_to "TODO: Admin Dashboard", admin_root_path
-          li.divider
+        = render 'shared/dropdown' if admin?
         li
           = link_to "Logout", destroy_user_session_path, method: :delete
