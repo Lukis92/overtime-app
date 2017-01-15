@@ -21,6 +21,8 @@ class EmployeeDashboard < Administrate::BaseDashboard
     last_name: Field::String.with_options(searchable: false),
     type: Field::String.with_options(searchable: false),
     phone: Field::String.with_options(searchable: false),
+    ssn: Field::Number.with_options(searchable: true),
+    company: Field::String.with_options(searchable: false),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false)
   }.freeze
@@ -33,6 +35,7 @@ class EmployeeDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :posts,
     :email,
+    :ssn,
     :type
   ].freeze
 
@@ -40,6 +43,8 @@ class EmployeeDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :posts,
+    :ssn,
+    :company,
     :email,
     :phone,
     :sign_in_count,
@@ -58,9 +63,11 @@ class EmployeeDashboard < Administrate::BaseDashboard
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :ssn,
     :email,
     :first_name,
     :last_name,
+    :company,
     :password,
     :phone
   ].freeze

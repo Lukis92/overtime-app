@@ -1,11 +1,13 @@
 @employee = Employee.create!(email: 'test@test.com', password: 'asdfasdf',
                     password_confirmation: 'asdfasdf', first_name: 'Jon',
-                    last_name: 'Snow', phone: "4322386131")
+                    last_name: 'Snow', phone: "4322386131",
+                    ssn: 1234, company: "ABC Company")
 
 puts "1 employee created"
 
 AdminUser.create(email: "admin@test.com", password: "asdfasdf", password_confirmation: "asdfasdf",
-                 first_name: "Admin", last_name: "Name", phone: "4322386156")
+                 first_name: "Admin", last_name: "Name", phone: "4322386156",
+                 ssn: 1234, company: "ABC Company")
 
 puts "1 Admin user created"
 
