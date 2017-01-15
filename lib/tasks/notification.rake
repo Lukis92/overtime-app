@@ -8,6 +8,7 @@ namespace :notification do
                               to request overtime or confirm your hours for \
                               last week: https://lk-overtime.herokuapp.com"
       employees.each do |e|
+        AuditLog.create!(user_id: employee.id)
         SmsTool.send_sms(number: e.phone, message: notification_message)
       end
     end
