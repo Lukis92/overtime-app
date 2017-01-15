@@ -24,6 +24,7 @@ gem 'factory_girl_rails', '~> 4.8'
 gem 'faker', '~> 1.7', '>= 1.7.2' # fake data generator
 gem 'heroku', '~> 3.43', '>= 3.43.16' # tool to manager app on Heroku
 gem 'kaminari', '~> 0.17' # customizable paginator
+gem 'newrelic_rpm' # performance management system
 gem 'puma', '~> 3.6', '>= 3.6.2' # Ruby Web Server
 gem 'pundit', '~> 1.1' # Object oriented authorization
 gem 'rails_12factor', '~> 0.0.3' # enables serving assets in production
