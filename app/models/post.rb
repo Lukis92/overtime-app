@@ -2,21 +2,21 @@
 #
 # Table name: posts
 #
-#  id               :integer          not null, primary key
-#  date             :date
-#  rationale        :text
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  user_id          :integer
-#  status           :integer          default(0)
-#  overtime_request :decimal(, )      default(0.0)
+#  id          :integer          not null, primary key
+#  date        :date
+#  rationale   :text
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#  user_id     :integer
+#  status      :integer          default("submitted")
+#  daily_hours :decimal(, )      default(0.0)
 #
 
 class Post < ActiveRecord::Base
   enum status: { submitted: 0, approved: 1, rejected: 2 }
   belongs_to :user
-  validates_presence_of :date, :rationale, :overtime_request
-  validates :overtime_request, numericality: { greater_than: 0.0 }
+  validates_presence_of :date, :rationale, :daily_hours
+  validates :daily_hours, numericality: { greater_than: 0.0 }
   scope :posts_by, ->(user) { where(user_id: user.id) }
   after_save :confirm_audit_log, if: :submitted?
   after_save :un_confirm_audit_log, if: :rejected?

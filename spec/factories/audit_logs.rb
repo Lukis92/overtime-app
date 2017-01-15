@@ -4,7 +4,7 @@
 #
 #  id         :integer          not null, primary key
 #  user_id    :integer
-#  status     :integer          default(0)
+#  status     :integer          default("pending")
 #  start_date :date
 #  end_date   :date
 #  created_at :datetime         not null
